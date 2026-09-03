@@ -1,36 +1,73 @@
-## Step 2: (replace-me: STEP-NAME)
+## Step 2: 증거를 남긴다
 
-(replace-me: OPTIONAL Brief story or scenario to introduce the step)
+워크플로를 만들었으니 한 번 돌려서 아티팩트가 실제로 생기는지 확인합니다.
 
-### 📖 Theory: (replace-me: Theory title)
+<img width="180" alt="Inflatocat" src="../images/inflatocat.png" />
 
-<!-- GitHub-styled notifications can be used outside of ordered lists. Available options are: NOTE, IMPORTANT, WARNING, TIP, CAUTION -->
-<!--
+### 📖 이론: 증거가 없으면 실패다
+
+에이전트 시스템에서 관측 가능성은 있으면 좋은 것이 아니라 **필수 설계 요건**입니다.
+증거가 없으면 이런 일을 할 수 없습니다.
+
+- 실패를 제대로 디버깅하기
+- 사고를 조사하기
+- 규정 준수를 증명하기
+- 자율적인 변경을 시간이 지나도 신뢰하기
+
+Learn 의 표현을 그대로 옮기면 이렇습니다.
+
+> 증거가 없으면 실패로 취급하라. 감사할 수 없는 변경은 머지하면 안 된다.
+
+최소한 이만큼은 남아야 합니다.
+
+1. 계획 산출물 (보통 PR 설명이나 별도 문서)
+2. 범위가 한정된 PR 과 커밋 이력
+3. 필수 체크의 워크플로 실행 링크
+4. 업로드된 아티팩트 (로그, 리포트)
+5. 리뷰 결과 (승인 또는 변경 요청)
+
+증거는 **특정 실행과 특정 커밋 상태로 추적 가능**해야 합니다.
+"이 아티팩트를 만든 실행이 무엇이고, 그때 코드는 어떤 상태였나" 에 답할 수 있어야 합니다.
+
 > [!NOTE]
-> (Important note or additional information relevant to this section)
- -->
+> 아티팩트 보존 기간은 기본 **90일** 입니다. 공개 리포는 1~90일,
+> 비공개는 최대 400일까지 설정할 수 있습니다. 삭제하면 복구할 수 없습니다.
+> 감사에 쓸 증거라면 보존 기간을 반드시 확인하세요.
 
-(replace-me: Optional theory or background information relevant to this step)
+### ⌨️ 실습: 워크플로를 실행한다
 
-(replace-me: OPTIONAL Reference images from the `.github/images/` directory to support any part of the content)
+1. **Actions** 탭을 엽니다.
 
-<img width="200" alt="descriptive alt text" src="../images/inflatocat.png" />
+1. 왼쪽에서 **Fan-in coordination** 워크플로를 선택합니다.
 
+1. **Run workflow** 를 눌러 `main` 브랜치에서 실행합니다.
 
-### ⌨️ Activity: (replace-me: Activity title)
+    앞 단계에서 `main` 에 커밋했다면 이미 한 번 돌았을 수도 있습니다.
+    그래도 한 번 더 실행해서 결과를 확인하세요.
 
-1. (replace-me: First instruction)
+1. 실행이 끝나면 실행 요약 페이지 아래쪽 **Artifacts** 섹션을 확인합니다.
 
-    (replace-me: Make sure to properly indent any multiline instructions)
+    `spec-report`, `risk-report`, `merged-plan` 세 개가 보여야 합니다.
 
-1. (replace-me: Second instruction)
+1. `merged-plan` 을 내려받아 내용을 열어 봅니다.
 
-1. (replace-me: Additional instructions as needed)
+    두 에이전트의 결과가 하나로 합쳐진 JSON 이 들어 있습니다.
+    이것이 아티팩트 기반 조정의 결과물입니다.
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>문제가 있나요? 🤷</summary><br/>
 
-- (replace-me: Troubleshooting tip or hint)
-- (replace-me: Additional troubleshooting tips as needed)
+- **채점이 통과하지 않습니다**
+  - 아티팩트가 2개 이상 있어야 합니다. 실행이 끝날 때까지 기다리세요.
+  - 실행을 `main` 에서 했는지 확인하세요. 다른 브랜치에서 돌리면 잡히지 않습니다.
+
+- **plan_merger 잡이 실패합니다**
+  - 앞의 두 잡이 아티팩트를 만들었는지 확인하세요.
+  - `jq` 는 ubuntu 러너에 기본 설치돼 있습니다.
+
+- **아티팩트가 안 보입니다**
+  - 잡이 성공해야 업로드됩니다. 실패한 잡의 로그를 먼저 확인하세요.
 
 </details>
+
+---
