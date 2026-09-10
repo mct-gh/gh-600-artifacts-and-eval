@@ -29,7 +29,7 @@ _두 갈래로 갈랐다가 다시 모으고, 증거를 아티팩트로 남기�
 아래 버튼으로 이 실습을 여러분 계정에 복사한 뒤, **20초 정도** 기다렸다가
 페이지를 **새로고침** 하세요.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=mct-gh&template_name=gh600-artifacts-and-eval&owner=%40me&name=gh600-artifacts-and-eval&description=GH-600+Lab+C+-+Fan-in+coordination+and+failure+analysis&visibility=public)
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=mct-gh&template_name=gh-600-artifacts-and-eval&owner=%40me&name=gh-600-artifacts-and-eval&description=GH-600+Lab+C+-+Fan-in+coordination+and+failure+analysis&visibility=public)
 
 <details>
 <summary>문제가 있나요? 🤷</summary><br/>
